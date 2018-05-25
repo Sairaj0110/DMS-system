@@ -1,0 +1,21 @@
+<input type="file" (change)=fileEvent($event)>
+<mat-grid-list cols="5" rowHeight="5:1">
+  <mat-grid-tile><b>Name</b></mat-grid-tile>
+  <mat-grid-tile><b>Username</b></mat-grid-tile>
+  <mat-grid-tile><b>Password</b></mat-grid-tile>
+  <mat-grid-tile><b>Update</b></mat-grid-tile>
+  <mat-grid-tile><b>Delete</b></mat-grid-tile>
+</mat-grid-list>
+<div  *ngFor="let doc of docs">
+  <app-vieweachuser (editclick)="viewSingleData($event)" (deleteclick)="deleteSingleData($event)" [id]="doc._id" [name]="doc.name" [username]="doc.username" [password]="doc.password"> </app-vieweachuser>
+</div>
+<!--  <mat-grid-tile>name</mat-grid-tile>
+			          <mat-grid-tile>username</mat-grid-tile>
+			          <mat-grid-tile>password</mat-grid-tile>
+			          <mat-grid-tile><i class="material-icons">edit</i></mat-grid-tile>
+			          <mat-grid-tile><i class="material-icons">delete_forever</i></mat-grid-tile>
+			      	</mat-grid-list> -->
+<!-- <div class="button-row">
+  <button mat-raised-button color="primary">Update</button>
+  <button mat-raised-button color="warn">Delete</button>
+</div> -->
